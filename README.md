@@ -75,3 +75,91 @@ Topologi CPT VLSM
 ![TREE VLSM1 drawio](https://github.com/user-attachments/assets/d334d7e0-a4b7-4749-9f36-a574a74401f2)
 
 ## Config Subnet
+
+
+
+
+# GNS 3 CIDR
+### Tree
+![image](https://github.com/user-attachments/assets/e4c8442d-85c4-4f7d-9bf8-0ad9f4dc0864)
+
+HoloLive
+```
+# DHCP config for eth0
+auto eth0
+iface eth0 inet dhcp
+#	hostname ubuntu-1-1
+
+# A3
+auto eth1
+iface eth1 inet static
+	address 192.238.208.1
+	netmask 255.255.255.252
+
+# A1
+auto eth2
+iface eth2 inet static
+	address 192.238.160.1
+	netmask 255.255.255.252
+#	gateway 192.168.2.1
+
+
+# A2
+auto eth3
+iface eth3 inet static
+	address 192.238.64.1
+	netmask 255.255.255.252
+#	gateway 192.168.3.1
+
+```
+
+Holo-EN
+```
+# A3
+auto eth0
+iface eth0 inet static
+	address 192.238.208.2
+	netmask 255.255.255.252
+	gateway 192.238.208.1
+
+# A17 
+auto eth1
+iface eth1 inet static
+	address 192.238.196.1
+	netmask 255.255.255.252
+#	gateway 192.168.1.1
+
+
+# A16
+auto eth2
+iface eth2 inet static
+	address 192.238.200.33
+	netmask 255.255.255.240
+#	gateway 192.168.2.1
+
+```
+Holoadvent 
+
+```
+# A16
+auto eth0
+iface eth0 inet static
+	address 192.238.200.34
+	netmask 255.255.255.240
+	gateway 192.238.200.33
+#	up echo nameserver 192.168.0.1 > /etc/resolv.conf
+
+# DHCP config for eth0
+#auto eth0
+#iface eth0 inet dhcp
+#	hostname ubuntu-1-1
+
+# A18
+auto eth1
+iface eth1 inet static
+	address 192.238.200.1
+	netmask 255.255.255.224
+#	gateway 192.168.1.1
+#	up echo nameserver 192.168.1.1 > /etc/resolv.conf
+```
+
