@@ -76,7 +76,7 @@ Topologi CPT VLSM
 
 ## Revisi
 
-## Config Subnet
+## Config Routing
 
 Hololive
 ```
