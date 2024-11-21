@@ -182,6 +182,12 @@ ip route 192.238.0.0 255.255.248.0 192.238.19.14
 ip route 192.238.19.65 255.255.255.248 192.238.19.14
 ```
 
+Hasil Routing
+![Screenshot 2024-11-21 222058](https://github.com/user-attachments/assets/6fd6e9e9-0195-4e46-9bea-d58c6563feb2)
+
+![Screenshot 2024-11-21 230900](https://github.com/user-attachments/assets/5ef60050-72f0-4db2-98b1-d188b0115584)
+
+
 # GNS 3 CIDR
 ### Tree
 ![image](https://github.com/user-attachments/assets/e4c8442d-85c4-4f7d-9bf8-0ad9f4dc0864)
