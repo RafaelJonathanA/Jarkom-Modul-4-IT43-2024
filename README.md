@@ -7,6 +7,9 @@
 | Rafael Jonathan Arnoldus          | 5027231006 | 
 | Gandhi Ert Julio                  | 5027231081 |
 
+## Link Video Revisi
+GNS3 CIDR : https://youtu.be/C-M6Yx80TtU 
+
 ## Topologi
 
 Topologi CPT VLSM
@@ -179,19 +182,12 @@ ip route 192.238.0.0 255.255.248.0 192.238.19.14
 ip route 192.238.19.65 255.255.255.248 192.238.19.14
 ```
 
-
-
-
 # GNS 3 CIDR
 ### Tree
 ![image](https://github.com/user-attachments/assets/e4c8442d-85c4-4f7d-9bf8-0ad9f4dc0864)
 
 HoloLive
 ```
-# DHCP config for eth0
-auto eth0
-iface eth0 inet dhcp
-#	hostname ubuntu-1-1
 
 # A3
 auto eth1
@@ -214,8 +210,364 @@ iface eth3 inet static
 	netmask 255.255.255.252
 #	gateway 192.168.3.1
 
+ip route add 192.238.194.64/29 via 192.238.208.2 dev eth1
+ip route add 192.238.10.0/25 via 192.238.64.2 dev eth3
+ip route add 192.238.144.0/23 via 192.238.160.2 dev eth2
+```
+Holo-ID
+
+```
+# A1
+auto eth0
+iface eth0 inet static
+	address 192.238.160.2
+	netmask 255.255.255.252
+	gateway 192.238.160.1
+
+# A4
+auto eth1
+iface eth1 inet static
+	address 192.238.192.1
+	netmask 255.255.255.252
+
+# A5
+auto eth2
+iface eth2 inet static
+	address 192.238.146.1
+	netmask 255.255.255.252
+
+# A6
+auto eth3
+iface eth3 inet static
+	address 192.238.136.65
+	netmask 255.255.255.252
+
+ip route add 192.238.144.0/23 via 192.238.136.66 dev eth3
+
+```
+Holon3ro
+```
+# A6
+auto eth0
+iface eth0 inet static
+	address 192.238.136.66
+	netmask 255.255.255.252
+	gateway 192.238.136.65	
+
+# A8
+auto eth1
+iface eth1 inet static
+	address 192.238.144.1
+	netmask 255.255.254.0
+```
+Zeta
+```
+# A8
+auto eth0
+iface eth0 inet static
+	address 192.238.144.2
+	netmask 255.255.254.0
+	gateway 192.238.144.1
+```
+Kaela
+```
+# A8
+auto eth0
+iface eth0 inet static
+	address 192.238.144.100
+	netmask 255.255.254.0
+	gateway 192.238.144.1
+```
+Kobo
+```
+# A8
+auto eth0
+iface eth0 inet static
+	address 192.238.144.200
+	netmask 255.255.254.0
+	gateway 192.238.144.1
 ```
 
+Holoro
+```
+# A6
+auto eth0
+iface eth0 inet static
+	address 192.238.136.67
+	netmask 255.255.255.252
+	gateway 192.238.136.65	
+
+# A9
+auto eth1
+iface eth1 inet static
+	address 192.238.136.1
+	netmask 255.255.255.192
+```
+
+Ollie 
+```
+# A9
+auto eth0
+iface eth0 inet static
+	address 192.238.136.2
+	netmask 255.255.255.192
+	gateway 192.238.136.1
+```
+Anya 
+```
+# A9
+auto eth0
+iface eth0 inet static
+	address 192.238.136.5
+	netmask 255.255.255.192
+	gateway 192.238.136.1
+```
+Reine
+```
+# A9
+auto eth0
+iface eth0 inet static
+	address 192.238.136.9
+	netmask 255.255.255.192
+	gateway 192.238.136.1
+```
+
+AREA 15
+```
+# A6
+auto eth0
+iface eth0 inet static
+	address 192.238.136.68
+	netmask 255.255.255.252
+	gateway 192.238.136.65	
+
+# A7
+auto eth1
+iface eth1 inet static
+	address 192.238.128.1
+	netmask 255.255.252.0
+```
+
+Risu
+```
+# A7
+auto eth0
+iface eth0 inet static
+	address 192.238.128.2
+	netmask 255.255.252.0
+	gateway 192.238.128.1
+```
+Moona
+```
+# A7
+auto eth0
+iface eth0 inet static
+	address 192.238.128.100
+	netmask 255.255.252.0
+	gateway 192.238.128.1
+```
+Lofi
+```
+# A7
+auto eth0
+iface eth0 inet static
+	address 192.238.128.200
+	netmask 255.255.252.0
+	gateway 192.238.128.1
+```
+
+Holo-JP
+```
+# A2
+auto eth0
+iface eth0 inet static
+	address 192.238.64.2
+	netmask 255.255.255.252
+	gateway 192.238.64.1
+
+# A10
+auto eth1
+iface eth1 inet static
+	address 192.238.32.1
+	netmask 255.255.255.248
+
+ip route add 192.238.10.0/25 via 192.238.32.2 dev eth1
+
+```
+Dev_ls
+
+```
+# A10
+auto eth0
+iface eth0 inet static
+	address 192.238.32.2
+	netmask 255.255.255.248
+	gateway 192.238.32.1
+
+# A11
+auto eth1
+iface eth1 inet static
+	address 192.238.16.1
+	netmask 255.255.255.240
+#	gateway 192.238.32.1
+
+```
+Ririka_raden 
+```
+# A11
+auto eth1
+iface eth1 inet static
+	address 192.238.16.2
+	netmask 255.255.255.240
+	gateway 192.238.16.1
+
+```
+Ao 
+```
+# A11
+auto eth1
+iface eth1 inet static
+	address 192.238.16.4
+	netmask 255.255.255.240
+	gateway 192.238.16.1
+
+```
+Hajime_Kanade
+```
+# A11
+auto eth1
+iface eth1 inet static
+	address 192.238.16.7
+	netmask 255.255.255.240
+	gateway 192.238.16.1
+
+```
+
+Gen:0 
+```
+# A10
+auto eth0
+iface eth0 inet static
+	address 192.238.32.2
+	netmask 255.255.255.248
+	gateway 192.238.32.1
+
+# A11
+auto eth1
+iface eth1 inet static
+	address 192.238.0.1
+	netmask 255.255.248.0
+#	gateway 192.238.32.1
+
+ip route add 192.238.10.0/25 via 192.238.7.1 dev eth1
+```
+MiComet 
+```
+# A11
+auto eth0
+iface eth0 inet static
+	address 192.238.0.2
+	netmask 255.255.248.0
+	gateway 192.238.0.1
+```
+Sora_Robo_azki
+```
+# A11
+auto eth0
+iface eth0 inet static
+	address 192.238.5.221
+	netmask 255.255.248.0
+	gateway 192.238.0.1
+```
+Gen:1
+```
+# A11
+auto eth0
+iface eth0 inet static
+	address 192.238.7.1
+	netmask 255.255.248.0
+	gateway 192.238.0.1
+
+# A13
+auto eth2
+iface eth2 inet static
+	address 192.238.10.129
+	netmask 255.255.255.252
+#	gateway 192.238.0.1 
+
+# A12
+auto eth3
+iface eth3 inet static
+	address 192.238.8.1
+	netmask 255.255.254.0
+#	gateway 192.238.0.1 
+
+ip route add 192.238.10.0/25 via 192.238.10.130 dev eth2
+```
+FBK_MAtsuri 
+```
+# A12
+auto eth0
+iface eth0 inet static
+	address 192.238.8.2
+	netmask 255.255.254.0
+	gateway 192.238.8.1 
+
+```
+Aki_Hachama
+```
+# A12
+auto eth0
+iface eth0 inet static
+	address 192.238.9.20
+	netmask 255.255.254.0
+	gateway 192.238.8.1 
+
+```
+
+Gamers
+```
+# A13
+auto eth0
+iface eth0 inet static
+	address 192.238.10.130
+	netmask 255.255.255.252
+	gateway 192.238.10.129
+
+# A14
+auto eth1
+iface eth1 inet static
+	address 192.238.10.1
+	netmask 255.255.255.128
+#	gateway 192.238.10.129
+```
+Korone 
+```
+# A14
+auto eth0
+iface eth0 inet static
+	address 192.238.10.2
+	netmask 255.255.255.128
+	gateway 192.238.10.1
+```
+Okayu 
+```
+# A14
+auto eth0
+iface eth0 inet static
+	address 192.238.10.54
+	netmask 255.255.255.128
+	gateway 192.238.10.1
+```
+Mio
+```
+# A14
+auto eth0
+iface eth0 inet static
+	address 192.238.10.86
+	netmask 255.255.255.128
+	gateway 192.238.10.1
+```
 Holo-EN
 ```
 # A3
@@ -239,6 +591,8 @@ iface eth2 inet static
 	address 192.238.200.33
 	netmask 255.255.255.240
 #	gateway 192.168.2.1
+
+ip route add 192.238.194.64/29 via 192.238.196.2 dev eth1
 
 ```
 Holoadvent 
@@ -264,5 +618,170 @@ iface eth1 inet static
 	netmask 255.255.255.224
 #	gateway 192.168.1.1
 #	up echo nameserver 192.168.1.1 > /etc/resolv.conf
+
+```
+Fuwamoco 
+```
+# A18 
+auto eth0
+iface eth0 inet static
+	address 192.238.200.2
+	netmask 255.255.255.224
+	gateway 192.238.200.1
+
+```
+Shiori_Nerissa 
 ```
 
+# A18 
+auto eth0
+iface eth0 inet static
+	address 192.238.200.7
+	netmask 255.255.255.224
+	gateway 192.238.200.1
+
+```
+Biboo
+```
+# A18 
+auto eth0
+iface eth0 inet static
+	address 192.238.200.20
+	netmask 255.255.255.224
+	gateway 192.238.200.1
+```
+
+Holo-Myth 
+```
+
+# A19
+auto eth1
+iface eth1 inet static
+	address 192.238.192.1 
+	netmask 255.255.254.0
+#	gateway 192.238.208.1
+
+# A17 
+auto eth0
+iface eth0 inet static
+	address 192.238.196.2
+	netmask 255.255.255.252
+	gateway 192.238.196.1
+
+
+# A20
+auto eth2
+iface eth2 inet static
+	address 192.238.194.129
+	netmask 255.255.255.248
+#	gateway 192.168.2.1
+
+ip route add 192.238.194.64/29 via 192.238.194.130 dev eth2 
+ip route add 192.238.194.0/26 via 192.238.194.131 dev eth2 
+
+ip addr flush dev eth1
+ip addr add 192.238.192.1/23 dev eth1
+ip link set eth1 up
+```
+
+Gura_ame_ina
+```
+# A19
+auto eth0
+iface eth0 inet static
+	address 192.238.192.2 
+	netmask 255.255.254.0
+	gateway 192.238.192.1
+```
+ip addr flush dev eth0
+ip addr add 192.238.192.2/23 dev eth0
+ip link set eth0 up
+ip route add default via 192.238.192.1
+
+
+Kiara_Calli
+```
+# A19
+auto eth0
+iface eth0 inet static
+	address 192.238.192.61 
+	netmask 255.255.254.0
+	gateway 192.238.192.1
+```
+Bila A19 tidak berjalan dengan baik maka 
+```
+ip addr flush dev eth0
+ip addr add 192.238.193.61/23 dev eth0
+ip link set eth0 up
+ip route add default via 192.238.192.1
+```
+
+Project-Hope 
+```
+# A20
+auto eth0
+iface eth0 inet static
+	address 192.238.194.130
+	netmask 255.255.255.248
+	gateway 192.238.194.129
+
+# A21
+auto eth1
+iface eth1 inet static
+	address 192.238.194.65
+	netmask 255.255.255.248
+#	gateway 192.238.194.129
+
+ip route add 192.238.192.0/23 via 192.238.194.129 dev eth0 
+ip route add 192.238.194.0/26 via 192.238.194.131 dev eth0 
+
+```
+lyrs 
+```
+# A21
+auto eth0
+iface eth0 inet static
+	address 192.238.194.66
+	netmask 255.255.255.248
+	gateway 192.238.194.65
+```
+
+Holo-Council
+```
+# A20
+auto eth0
+iface eth0 inet static
+	address 192.238.194.131
+	netmask 255.255.255.248
+	gateway 192.238.194.129
+
+# A22
+auto eth0
+iface eth0 inet static
+	address 192.238.194.1
+	netmask 255.255.255.192
+#	gateway 192.238.194.129
+
+ip route add 192.238.192.0/23 via 192.238.194.129 dev eth0 
+ip route add 192.238.194.64/29 via 192.238.194.130 dev eth0 
+
+```
+Kronii_Mumei 
+```
+# A22
+auto eth0
+iface eth0 inet static
+	address 192.238.194.2
+	netmask 255.255.255.192
+	gateway 192.238.194.1
+```
+
+Bae Fauna
+```
+# A22
+auto eth0
+iface eth0 inet static
+	address 192.238.194.40
+	netmask 255.255.255.192
+	gateway 192.238.194.1
+```
